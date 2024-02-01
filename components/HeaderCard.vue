@@ -18,7 +18,7 @@ const props = defineProps({
 				<p>Uge</p>
 				<h2>{{ props.number }}</h2>
 			</div>
-			<img :src="'/imgs/' + number + '.jpg'" type="image/jpg" />
+			<NuxtImg :src="'/imgs/' + number + '.jpg'" />
 
 			<h3>Lorem Ipsum</h3>
 		</li>
@@ -30,6 +30,12 @@ const props = defineProps({
 	background-color: white;
 	box-shadow: -14px 10px 26px -6px rgba(0, 0, 0, 0.19);
 	border-radius: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+	.selected {
+		border-radius: 0;
+	}
 }
 
 li {
@@ -47,8 +53,9 @@ div {
 
 img {
 	border-radius: 1rem;
-	aspect-ratio: 150 / 100;
+	aspect-ratio: 1.5 / 1;
 	max-height: 100px;
+	max-width: 150px;
 }
 
 p {
@@ -62,6 +69,7 @@ h2 {
 }
 
 h3 {
+	text-overflow: ellipsis;
 	font-size: 1.2rem;
 	font-weight: 500;
 }
