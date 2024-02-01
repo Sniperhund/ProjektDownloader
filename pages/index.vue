@@ -1,9 +1,3 @@
 <template>
-  <div></div>
+	<h1>Vælg en uge.</h1>
 </template>
-
-<style scoped>
-.div {
-  display: flex;
-}
-</style>
