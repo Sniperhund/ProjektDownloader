@@ -47,7 +47,7 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
 	.article {
 		flex-direction: column;
 		margin: 0;

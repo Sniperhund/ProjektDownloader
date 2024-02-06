@@ -12,17 +12,19 @@ const props = defineProps({
 </script>
 
 <template>
-	<NuxtLink :to="'/week/' + number">
-		<li :class="selected == true ? 'selected' : ''">
+	<li :class="selected == true ? 'selected' : ''">
+		<NuxtLink :to="'/week/' + number">
 			<div>
 				<p>Uge</p>
 				<h2>{{ props.number }}</h2>
 			</div>
-			<NuxtImg :src="'/imgs/' + number + '.jpg'" />
+			<figure>
+				<NuxtImg :src="'/imgs/' + number + '.jpg'" />
+			</figure>
 
 			<h3>Lorem Ipsum</h3>
-		</li>
-	</NuxtLink>
+		</NuxtLink>
+	</li>
 </template>
 
 <style scoped>
@@ -32,30 +34,38 @@ const props = defineProps({
 	border-radius: 1rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
 	.selected {
 		border-radius: 0;
 	}
 }
 
 li {
-	display: flex;
-	align-items: center;
 	max-height: 150px;
-	gap: 2rem;
 	padding: 1rem 2rem;
 	cursor: pointer;
 }
 
+a {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
 div {
 	text-align: center;
+	flex: 1 1 10%;
+}
+
+figure {
+	flex: 1 1 40%;
+	max-width: 150px;
 }
 
 img {
 	border-radius: 1rem;
 	aspect-ratio: 1.5 / 1;
-	max-height: 100px;
-	max-width: 150px;
+	width: 100%;
 }
 
 p {
@@ -72,5 +82,6 @@ h3 {
 	text-overflow: ellipsis;
 	font-size: 1.2rem;
 	font-weight: 500;
+	flex: 1 1 30%;
 }
 </style>

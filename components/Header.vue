@@ -20,7 +20,7 @@ const isMenuOpen = ref(false);
 </script>
 
 <template>
-	<ul v-if="viewport.isGreaterOrEquals('tablet')">
+	<ul v-if="viewport.isGreaterOrEquals('desktop')">
 		<HeaderCard
 			v-for="i in weeks"
 			:number="i.toString()"
